@@ -1,7 +1,9 @@
-export default function Home() {
+const Index = () => {
     return (
         <>
-            mobile
+            H5H5H5H5H5H5H5H5
         </>
     );
 }
+
+export default Index

@@ -1,7 +1,9 @@
-export default function Home() {
+ const Index = () => {
     return (
         <>
-            pc
+            pcpcpcpcpcpcpcpc
         </>
     );
 }
+
+ export default Index
