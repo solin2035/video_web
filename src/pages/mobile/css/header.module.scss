@@ -1,0 +1,17 @@
+$headerHeight: 50px;
+
+.header{
+    height: $headerHeight;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.left {
+    line-height: $headerHeight;
+}
+
+.right {
+    line-height: $headerHeight;
+}
