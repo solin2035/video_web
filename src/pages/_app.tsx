@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "@/assets/styles/globals.css";
 import App, { AppProps, AppContext } from "next/app";
 import Router from "next/router";
 import { NextPageContext } from "next/dist/shared/lib/utils";
