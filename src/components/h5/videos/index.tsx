@@ -1,5 +1,6 @@
 import style from "@/assets/styles/h5/videos.module.scss";
 import { useState } from "react";
+import { Button } from "antd";
 
 const Videos = () => {
   const [list, setList] = useState([
@@ -36,6 +37,7 @@ const Videos = () => {
   ]);
   return (
     <div className={style.videoWrap}>
+      <Button>31233</Button>
       <h3 className={style.title}>重磅热播</h3>
       <ul className={style.list}>
         {list.map((item, index) => {
