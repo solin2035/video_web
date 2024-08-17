@@ -1,4 +1,4 @@
-import homeStyle from "../css/header.module.scss"
+import homeStyle from "../../../styles/h5/header.module.scss"
 
 const Header = () => {
     return (

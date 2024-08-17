@@ -1,15 +1,14 @@
 import Header from "./components/Header"
 import Banner from "./components/Banner"
 import TabsMenu from "./components/TabsMenu"
-
-import mainStyle from "./css/main.module.css"
+import mainStyle from "../../styles/h5/main.module.css"
 
 const Index = () => {
     return (
         <main className={mainStyle.main}>
-            <Header />
-            <TabsMenu />
-            <Banner />
+            <Header/>
+            <TabsMenu/>
+            <Banner/>
         </main>
     );
 }

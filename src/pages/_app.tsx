@@ -5,7 +5,7 @@ import { NextPageContext } from "next/dist/shared/lib/utils";
 import isMobile from "is-mobile";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return <Component {...pageProps} />
 }
 
 function redirect(ctx: NextPageContext, location: string) {
@@ -24,6 +24,7 @@ MyApp.getInitialProps = async (context: AppContext) => {
   // 是否为平板电脑终端
   const isTabletDevice =
       !isMobileDevice && isMobile({ ua: ctx.req, tablet: true });
+
   if (isMobileDevice && !ctx.pathname.startsWith("/mobile")) {
     redirect(ctx, "/mobile");
   } else if (isTabletDevice && !ctx.pathname.startsWith("/tablet")) {
