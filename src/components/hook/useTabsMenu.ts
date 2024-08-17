@@ -1,6 +1,8 @@
-import Router from "next/router";
+import Router, {useRouter } from "next/router";
 
 const useTabsMenu = () => {
+    const router = useRouter();
+
     const tabs = [
         {
             id: 1,
@@ -29,7 +31,7 @@ const useTabsMenu = () => {
     }
 
     const isActive = (path: string) => {
-        return window.location.pathname === path
+        return router.pathname === path
     }
 
     return {
