@@ -1,5 +1,5 @@
 import tabsMenuStyle from "../../../styles/h5/tabsMenu.module.scss"
-import useTabsMenu from "@/pages/hook/useTabsMenu";
+import useTabsMenu from "@/pages/components/hook/useTabsMenu";
 
 const TabsMenu = () => {
     const {tabs, goToPath} = useTabsMenu()
