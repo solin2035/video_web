@@ -1,18 +1,13 @@
-import Header from "@/components/h5/Header";
 import Banner from "@/components/h5/Banner";
-import TabsMenu from "@/components/h5/TabsMenu";
 import Videos from "@/components/h5/videos";
-
-import mainStyle from "@/assets/styles/h5/main.module.css";
+import Layout from "@/components/h5/Layout";
 
 const Index = () => {
   return (
-    <main className={mainStyle.main}>
-      <Header />
-      <TabsMenu />
-      <Banner />
-      <Videos />
-    </main>
+      <Layout>
+          <Banner />
+          <Videos />
+      </Layout>
   );
 };
 

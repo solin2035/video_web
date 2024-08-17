@@ -1,14 +1,10 @@
-import Header from "@/components/h5/Header";
-import TabsMenu from "@/components/h5/TabsMenu";
-import mainStyle from "@/assets/styles/h5/main.module.css";
+import Layout from "@/components/h5/Layout";
 
 const Index = () => {
     return (
-        <main className={mainStyle.main}>
-            <Header/>
-            <TabsMenu/>
+        <Layout>
             电视剧
-        </main>
+        </Layout>
     );
 }
 
