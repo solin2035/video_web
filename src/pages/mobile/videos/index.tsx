@@ -38,9 +38,9 @@ const Videos = () => {
     <div className={style.videoWrap}>
       <h3 className={style.title}>重磅热播</h3>
       <ul className={style.list}>
-        {list.map((item) => {
+        {list.map((item, index) => {
           return (
-            <li className={style.item}>
+            <li key={index} className={style.item}>
               <img src={item.img} alt="" />
               <p>{item.name}</p>
               <p>{item.intro}</p>
