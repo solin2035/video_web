@@ -1,4 +1,4 @@
-import style from "@/styles/h5/videos.module.scss";
+import style from "@/assets/styles/h5/videos.module.scss";
 import { useState } from "react";
 
 const Videos = () => {

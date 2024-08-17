@@ -1,4 +1,4 @@
- import headerStyle from "@/styles/pc/header.module.scss"
+ import headerStyle from "@/assets/styles/pc/header.module.scss"
 
  const Header = () => {
     return (

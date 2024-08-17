@@ -1,4 +1,4 @@
- import style from "@/styles/pc/nav.module.scss"
+ import style from "@/assets/styles/pc/nav.module.scss"
 
  const Header = () => {
     return (
