@@ -1,5 +1,15 @@
+import Header from "@/components/h5/Header";
+import TabsMenu from "@/components/h5/TabsMenu";
+import mainStyle from "@/assets/styles/h5/main.module.css";
+
 const Index = () => {
-  return <div>电影页面</div>;
+  return (
+      <main className={mainStyle.main}>
+          <Header/>
+          <TabsMenu/>
+          电影页面
+      </main>
+  )
 };
 
 export default Index;

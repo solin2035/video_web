@@ -1,9 +1,15 @@
- const Index = () => {
+import Header from "@/components/h5/Header";
+import TabsMenu from "@/components/h5/TabsMenu";
+import mainStyle from "@/assets/styles/h5/main.module.css";
+
+const Index = () => {
     return (
-        <div>
+        <main className={mainStyle.main}>
+            <Header/>
+            <TabsMenu/>
             综艺
-        </div>
+        </main>
     );
 }
 
- export default Index
+export default Index

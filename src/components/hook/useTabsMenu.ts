@@ -29,7 +29,6 @@ const useTabsMenu = () => {
     }
 
     const isActive = (path: string) => {
-        console.log(window.location.pathname, path)
         return window.location.pathname === path
     }
 
