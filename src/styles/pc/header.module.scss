@@ -1,6 +1,10 @@
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 84px;
-    width: 100%;
+    z-index: 100;
     display: flex;
     background-image: linear-gradient(0deg, rgba(20, 20, 20, 0.00) 1%, rgba(20, 20, 20, 0.60) 99%);
 }
