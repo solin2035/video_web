@@ -3,7 +3,7 @@ import Banner from "./components/Banner";
 import TabsMenu from "./components/TabsMenu";
 import Videos from "./videos";
 
-import mainStyle from "./css/main.module.css";
+import mainStyle from "@/styles/h5/main.module.css";
 
 const Index = () => {
   return (
