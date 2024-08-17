@@ -1,14 +1,12 @@
 import Banner from "@/components/h5/Banner";
-import Videos from "@/components/h5/Videos/index";
+import VideoList from "@/components/h5/VideoList/index";
 import Layout from "@/components/h5/Layout";
-import List from "@/components/List/index";
 
 const Index = () => {
   return (
     <Layout>
       <Banner />
-      <Videos />
-      {/* <List></List> */}
+      <VideoList></VideoList>
     </Layout>
   );
 };

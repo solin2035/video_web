@@ -12,6 +12,7 @@ const nextConfig = {
     "rc-tooltip",
     "rc-tree",
     "rc-table",
+    "xgplayer",
     "react-infinite-scroll-component",
   ],
   sassOptions: {

@@ -1,0 +1,14 @@
+.aspectRatioBox {
+    position: relative;
+    width: 100%;
+    padding-top: calc(100% / var(--aspect-ratio));
+}
+
+.aspectRatioContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}

@@ -4,6 +4,8 @@ import { Avatar, Divider, List, Skeleton } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { DotChartOutlined } from "@ant-design/icons";
 import EndLoad from "@/components/h5/EndLoad";
+import AppVideo from "@/components/Video/index";
+import AspectRatioBox from "@/components/AspectRatioBox/index";
 
 const Videos = () => {
   const [list, setList] = useState([
@@ -81,7 +83,10 @@ const Videos = () => {
           {list.map((item, index) => {
             return (
               <li key={index} className={style.item}>
-                <img src={item.img} alt="" />
+                <AspectRatioBox ratio={170 / 95}>
+                  <AppVideo poster={item.img}></AppVideo>
+                </AspectRatioBox>
+                {/* <img src={item.img} alt="" /> */}
                 <p>{item.name}</p>
                 <p>{item.intro}</p>
               </li>
