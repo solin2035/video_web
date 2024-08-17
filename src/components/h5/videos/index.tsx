@@ -1,5 +1,4 @@
 import style from "@/assets/styles/h5/videos.module.scss";
-// import "@/assets/styles/h5/videos.scss";
 import React, { useEffect, useState, useMemo } from "react";
 import { Avatar, Divider, List, Skeleton } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -59,13 +58,12 @@ const Videos = () => {
   }, []);
 
   const loaderSkeleton = useMemo(() => {
-    // return (
-    //   <div className={style.skeleton}>
-    //     <Skeleton.Node active={true}></Skeleton.Node>
-    //     <Skeleton.Node active={true}></Skeleton.Node>
-    //   </div>
-    // );
-    return <Skeleton avatar paragraph={{ rows: 1 }} active />;
+    return (
+      <div className={style.skeleton}>
+        <Skeleton.Node active={true}>LOGO</Skeleton.Node>
+        <Skeleton.Node active={true}>LOGO</Skeleton.Node>
+      </div>
+    );
   }, []);
 
   return (

@@ -27,3 +27,20 @@
         width: 100%;
     }
 }
+
+.skeleton {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    :global {
+        .ant-skeleton {
+            width: calc(50% - 4px) !important;
+                border-radius: 2px;
+        }
+        .ant-skeleton-image {
+            width: 100% !important;
+        }
+    }
+    
+}
