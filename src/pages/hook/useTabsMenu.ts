@@ -8,7 +8,7 @@ const useTabsMenu = () => {
         {
             id: 2,
             name: '电影',
-            path: '/dy'
+            path: '/mobile/dy'
         },
         {
             id: 3,
