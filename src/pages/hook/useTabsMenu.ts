@@ -3,7 +3,7 @@ const useTabsMenu = () => {
         {
             id: 1,
             name: '首页',
-            path: '/'
+            path: '/mobile'
         },
         {
             id: 2,
@@ -13,12 +13,12 @@ const useTabsMenu = () => {
         {
             id: 3,
             name: '电视剧',
-            path: '/dsj'
+            path: '/mobile/dsj'
         },
         {
             id: 4,
             name: '综艺',
-            path: '/zy'
+            path: '/mobile/zy'
         }
     ]
 
@@ -26,9 +26,15 @@ const useTabsMenu = () => {
         window.location.href = path
     }
 
+    const isActive = (path: string) => {
+        console.log(window.location.pathname, path)
+        return window.location.pathname === path
+    }
+
     return {
         tabs,
-        goToPath
+        goToPath,
+        isActive
     }
 }
 

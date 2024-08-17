@@ -1,0 +1,14 @@
+.tabsMenu {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 4px;
+}
+.tabsMenu__item {
+    padding: 0 12px;
+    font-size: 16px;
+}
+
+.tabsMenu__item_active {
+    color: red;
+}
