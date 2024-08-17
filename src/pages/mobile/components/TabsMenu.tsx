@@ -1,19 +1,16 @@
 import tabsMenuStyle from "../css/tabsMenu.module.scss"
+import useTabsMenu from "@/pages/hook/useTabsMenu";
 
 const TabsMenu = () => {
+    const {tabs, goToPath} = useTabsMenu()
+
     return (
         <div className={tabsMenuStyle.tabsMenu}>
-            <div className={tabsMenuStyle.tabsMenu__item}>
-                <a href="#">首页</a>
-            </div>
-            <div className={tabsMenuStyle.tabsMenu__item}>
-                <a href="#">电视剧</a>
-            </div>
-            <div className={tabsMenuStyle.tabsMenu__item}>
-                <a href="#">综艺</a>
-            </div>
-           <div className={tabsMenuStyle.tabsMenu__item}
-           />
+            {
+                tabs.map((tab) => <div className={tabsMenuStyle.tabsMenu__item} key={tab.id}>
+                <a href={tab.path} onClick={() => goToPath(tab.path)}>{tab.name}</a>
+            </div>)
+            }
         </div>
     )
 }
