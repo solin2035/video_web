@@ -1,0 +1,28 @@
+.videoWrap {
+    padding-left: 14px;
+    
+    padding-right: 14px;
+
+}
+.title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+}
+.list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    
+    
+}
+.item {
+    width: calc(50% - 4px);
+    border-radius: 2px;
+    overflow: hidden;
+    > img {
+        width: 100%;
+    }
+}
