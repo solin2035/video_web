@@ -1,3 +1,5 @@
+import Router from "next/router";
+
 const useTabsMenu = () => {
     const tabs = [
         {
@@ -23,7 +25,7 @@ const useTabsMenu = () => {
     ]
 
     const goToPath = (path: string) => {
-        window.location.href = path
+        Router.push(path)
     }
 
     const isActive = (path: string) => {
