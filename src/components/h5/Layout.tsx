@@ -1,10 +1,11 @@
 import Header from "@/components/h5/Header";
 import TabsMenu from "@/components/h5/TabsMenu";
 import mainStyle from "@/assets/styles/h5/main.module.css";
-const Layout = ({ children }: { children: React.ReactNode }) => {
+
+const Layout = ({children, noTabs}: { children: React.ReactNode, noTabs?: boolean }) => {
     return <main className={mainStyle.main}>
         <Header/>
-        <TabsMenu/>
+        {noTabs ? null : <TabsMenu/>}
         {children}
     </main>
 }
