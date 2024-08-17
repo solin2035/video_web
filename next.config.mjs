@@ -11,6 +11,7 @@ const nextConfig = {
     "rc-tooltip",
     "rc-tree",
     "rc-table",
+    "react-infinite-scroll-component",
   ],
   // 增加下面这项配置——关闭image自动优化
   images: {

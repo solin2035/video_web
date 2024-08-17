@@ -1,6 +1,10 @@
 import style from "@/assets/styles/h5/videos.module.scss";
-import { useState } from "react";
-import { Button } from "antd";
+// import "@/assets/styles/h5/videos.scss";
+import React, { useEffect, useState, useMemo } from "react";
+import { Avatar, Divider, List, Skeleton } from "antd";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { DotChartOutlined } from "@ant-design/icons";
+import EndLoad from "@/components/h5/EndLoad";
 
 const Videos = () => {
   const [list, setList] = useState([
@@ -35,21 +39,58 @@ const Videos = () => {
       img: `https://tv.puui.qpic.cn/tv/0/mz_tv_image_frontend_442f1e-8_358937277_1723859285763105_pic_540x304/384?max_age=7776000`,
     },
   ]);
+
+  const [loading, setLoading] = useState(false);
+
+  const loadMoreData = () => {
+    if (loading) {
+      return;
+    }
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      const newList = [...list];
+      setList([...list, ...newList]);
+    }, 500);
+  };
+
+  useEffect(() => {
+    loadMoreData();
+  }, []);
+
+  const loaderSkeleton = useMemo(() => {
+    // return (
+    //   <div className={style.skeleton}>
+    //     <Skeleton.Node active={true}></Skeleton.Node>
+    //     <Skeleton.Node active={true}></Skeleton.Node>
+    //   </div>
+    // );
+    return <Skeleton avatar paragraph={{ rows: 1 }} active />;
+  }, []);
+
   return (
     <div className={style.videoWrap}>
-      <Button>31233</Button>
       <h3 className={style.title}>重磅热播</h3>
-      <ul className={style.list}>
-        {list.map((item, index) => {
-          return (
-            <li key={index} className={style.item}>
-              <img src={item.img} alt="" />
-              <p>{item.name}</p>
-              <p>{item.intro}</p>
-            </li>
-          );
-        })}
-      </ul>
+      <InfiniteScroll
+        dataLength={list.length}
+        next={loadMoreData}
+        hasMore={list.length < 50}
+        loader={loaderSkeleton}
+        endMessage={<EndLoad></EndLoad>}
+        scrollableTarget="scrollableDiv"
+      >
+        <ul className={style.list}>
+          {list.map((item, index) => {
+            return (
+              <li key={index} className={style.item}>
+                <img src={item.img} alt="" />
+                <p>{item.name}</p>
+                <p>{item.intro}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </InfiniteScroll>
     </div>
   );
 };
