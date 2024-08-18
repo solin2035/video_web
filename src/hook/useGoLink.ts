@@ -10,7 +10,7 @@ const  useGoLink = () => {
             router.push(`${platformUrl}`);
             return 
         }
-        router.push(`${platformUrl}/${url}`);
+        router.push(`${platformUrl}${url}`);
     }
     return {
         goLink
