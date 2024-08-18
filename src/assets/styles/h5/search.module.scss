@@ -1,6 +1,7 @@
 .search {
   display: flex;
   padding-left: 16px;
+  padding-bottom: 16px;
   flex-direction: column;
   height: 100%;
   background-color: #000;
@@ -47,13 +48,9 @@ $searchTopHeight: 50px;
 
 .topContent {
   width: 100%;
-  overflow: hidden;
-
-  .content {
-    display: flex;
-    gap: 12px;
-    overflow: scroll;
-  }
+  overflow: scroll;
+  white-space: nowrap;
+  flex: 1;
 }
 
 .historyList {

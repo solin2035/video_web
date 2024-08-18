@@ -4,7 +4,12 @@ import {debounce} from "lodash"
 
 interface searchListType {
     id: number,
-    title: string
+    title: string,
+}
+
+interface topListType {
+    id: number,
+    list: Array<any>
 }
 
 interface searchParams {
@@ -13,19 +18,16 @@ interface searchParams {
 
 const useSearch = () => {
     const router = useRouter()
-    const [searchList, setSearchList] = useState<searchListType[]>([])
+    const [searchList, setSearchList] = useState<Array<searchListType>>([{id: 0, title: ""}])
+    const [topList, setTopList] = useState<Array<topListType>>([{id: 0, list: []}])
 
     const videoTypeList = [
+        {id: 0, title: "热搜"},
         {id: 1, title: "电影"},
         {id: 2, title: "电视剧"},
         {id: 3, title: "综艺"},
         {id: 4, title: "动漫"},
         {id: 5, title: "纪录片"},
-        {id: 6, title: "电影"},
-        {id: 7, title: "电视剧"},
-        {id: 8, title: "综艺"},
-        {id: 9, title: "动漫"},
-        {id: 10, title: "纪录片"},
     ]
 
     /**
@@ -33,7 +35,7 @@ const useSearch = () => {
      * @param param
      */
     async function getSearchListApi(param: searchParams) {
-        return {data: [{id: 1, title: "1"}, {id: 2, title: "2"}]}
+        return {data: [{id: 1, title: "电影", list: []}, {id: 2, title: "电视剧", list: []}]}
     }
 
     /**
@@ -42,6 +44,18 @@ const useSearch = () => {
      */
     async function getSearchDetailApi(param: searchParams) {
         return {data: {id: 321}}
+    }
+
+    /**
+     * 获取TOP详情
+     */
+    async function getTopListApi() {
+        return {data: [{id: 1, list: [{id: "1111", name: "adasddasd"}, {id: "2222", name: "fasds"}]}]}
+    }
+
+    const getTopList = async () => {
+        const result = await getTopListApi()
+        if (result.data) setTopList(result.data)
     }
 
     const getSearchList = debounce(async (e: { target: { value: any; }; }) => {
@@ -87,7 +101,9 @@ const useSearch = () => {
         searchList,
         videoTypeList,
         getHistory,
-        clearHistory
+        clearHistory,
+        topList,
+        getTopList
     }
 }
 export default useSearch
