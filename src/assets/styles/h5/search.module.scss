@@ -1,6 +1,7 @@
 .search {
   display: flex;
   padding: 0 16px;
+  flex-direction: column;
 }
 
 $searchTopHeight: 50px;
@@ -12,17 +13,23 @@ $searchTopHeight: 50px;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-}
 
-.searchInput {
-  border-radius: 20px !important;
-  background-color: #141414 !important;
-  color: #f2f4f5 !important;
+  .searchInput {
+    border-radius: 20px;
+    background-color: #242424;
+    color: #f2f4f5;
+    border: none;
 
-  :deep {
-    .ant-input-suffix {
-      background-color: #141414 !important;
-      color: #f2f4f5 !important;
+    &:focus-within, &:hover {
+      background-color: #242424;
+      box-shadow: none;
+      border: none;
+    }
+
+    :global {
+      .ant-input-clear-icon {
+        color: #f2f4f5;
+      }
     }
   }
 }

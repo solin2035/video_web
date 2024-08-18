@@ -34,7 +34,7 @@ const AppVideo = (props: Props) => {
         poster: poster,
         autoplay: false,
       });
-      p.on(Events.PlAY, () => {
+      p.on(Events.PLAY, () => {
         console.log(`3333`);
       });
       setPlayer(p);
@@ -48,7 +48,7 @@ const AppVideo = (props: Props) => {
 
     if (player) {
       console.log(`11111`);
-      player.on(Events.PlAY, () => {
+      player.on(Events.PLAY, () => {
         console.log(`22222`);
       });
       return () => {

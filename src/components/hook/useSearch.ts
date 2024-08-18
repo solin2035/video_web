@@ -1,23 +1,46 @@
 import {useState} from "react";
 import {useRouter} from "next/router";
+import {debounce} from "lodash"
+
+interface searchListType {
+    id: number,
+    title: string
+}
+
+interface searchParams {
+    title: string
+}
 
 const useSearch = () => {
     const router = useRouter()
-    const [search, setSearch] = useState('')
-    const [searchList, setSearchList] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [page, setPage] = useState(1)
-    const [total, setTotal] = useState(0)
-    const [hasMore, setHasMore] = useState(true)
+    const [searchList, setSearchList] = useState<searchListType[]>([])
 
-    async function getSearchListApi(param: {}) {
-
+    /**
+     * 模糊搜索列表
+     * @param param
+     */
+    async function getSearchListApi(param: searchParams) {
+        return {data: [{id: 1, title: "1"}, {id: 2, title: "2"}]}
     }
 
-    const getSearchList = async () => {
-        setLoading(true)
+    /**
+     * 获取搜索详情
+     * @param param
+     */
+    async function getSearchDetailApi(param: searchParams) {
+        return {data: {id: 321}}
+    }
+
+    const getSearchList = debounce(async (e: { target: { value: any; }; }) => {
         console.log("搜索")
-        const res = await getSearchListApi({})
+        const result = await getSearchListApi({title: e.target.value})
+        if (result.data) setSearchList(result.data)
+    }, 200)
+
+    const goToSearchDetail = async (e: { target: { value: any; }; }) => {
+        console.log("搜索进入详情")
+        const result = await getSearchDetailApi({title: e.target.value})
+        if (result.data.id) await router.push(`/mobile/search/detail/${result.data.id}`)
     }
 
     const toSearch = () => {
@@ -25,34 +48,17 @@ const useSearch = () => {
     }
 
     const cancelSearch = () => {
-        setSearch('')
-        setSearchList([])
-        setLoading(false)
-        setPage(1)
-        setTotal(0)
-        setHasMore(true)
         console.log(3333)
         console.log(router)
         router.back()
     }
 
     return {
-        search,
-        setSearch,
-        searchList,
-        setSearchList,
-        loading,
-        setLoading,
-        page,
-        setPage,
-        total,
-        setTotal,
-        hasMore,
-        setHasMore,
-
+        goToSearchDetail,
         getSearchList,
         toSearch,
-        cancelSearch
+        cancelSearch,
+        searchList
     }
 }
 export default useSearch

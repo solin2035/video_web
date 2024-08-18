@@ -20,36 +20,42 @@ const Videos = () => {
       intro: `宁浩刘德华揭露娱圈百态`,
       img: `https://tv.puui.qpic.cn/tv/0/mz_tv_image_frontend_b9f70b-0_1685990982_1723862269065994_pic_540x304/384?max_age=7776000`,
       id: 123,
+      src: ""
     },
     {
       name: `斗罗大陆2·更新`,
       intro: `你我皆唐门，生在绝世中`,
       img: `https://tv.puui.qpic.cn/tv/0/mz_tv_image_frontend_442f1e-8_358937277_1723859285763105_pic_540x304/384?max_age=7776000`,
       id: 123,
+      src: ""
     },
     {
       name: `红毯先生🔥娱乐圈内幕`,
       intro: `宁浩刘德华揭露娱圈百态`,
       img: `https://tv.puui.qpic.cn/tv/0/mz_tv_image_frontend_b9f70b-0_1685990982_1723862269065994_pic_540x304/384?max_age=7776000`,
       id: 123,
+      src: ""
     },
     {
       name: `斗罗大陆2·更新`,
       intro: `你我皆唐门，生在绝世中`,
       img: `https://tv.puui.qpic.cn/tv/0/mz_tv_image_frontend_442f1e-8_358937277_1723859285763105_pic_540x304/384?max_age=7776000`,
       id: 123,
+      src: ""
     },
     {
       name: `红毯先生🔥娱乐圈内幕`,
       intro: `宁浩刘德华揭露娱圈百态`,
       img: `https://tv.puui.qpic.cn/tv/0/mz_tv_image_frontend_b9f70b-0_1685990982_1723862269065994_pic_540x304/384?max_age=7776000`,
       id: 123,
+      src: ""
     },
     {
       name: `斗罗大陆2·更新`,
       intro: `你我皆唐门，生在绝世中`,
       img: `https://tv.puui.qpic.cn/tv/0/mz_tv_image_frontend_442f1e-8_358937277_1723859285763105_pic_540x304/384?max_age=7776000`,
       id: 123,
+      src: ""
     },
   ]);
 
@@ -108,6 +114,7 @@ const Videos = () => {
                     goLink={() => goVideoDetail(item)}
                     videoId={item.id}
                     poster={item.img}
+                    src={item.src}
                   ></AppVideo>
                 </AspectRatioBox>
                 {/* <img src={item.img} alt="" /> */}
