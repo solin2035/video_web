@@ -33,6 +33,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: 12px;
     :global {
         .ant-skeleton {
             width: calc(50% - 4px) !important;
@@ -40,6 +41,10 @@
         }
         .ant-skeleton-image {
             width: 100% !important;
+            > img {
+                width: 38%;
+                filter: grayscale(0.3);
+            }
         }
     }
     

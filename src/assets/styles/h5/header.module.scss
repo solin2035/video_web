@@ -6,10 +6,16 @@ $headerHeight: 50px;
     display: flex;
     justify-content: space-between;
     align-content: center;
+
 }
 
 .left {
     line-height: $headerHeight;
+    display: flex;
+    align-items: center;
+    img {
+        height: 32px;
+    }
 }
 
 .right {

@@ -62,8 +62,12 @@ const Videos = () => {
   const loaderSkeleton = useMemo(() => {
     return (
       <div className={style.skeleton}>
-        <Skeleton.Node active={true}>LOGO</Skeleton.Node>
-        <Skeleton.Node active={true}>LOGO</Skeleton.Node>
+        <Skeleton.Node active={true}>
+          <img src="/imgs/logo-pure.png" alt="最新影院" />
+        </Skeleton.Node>
+        <Skeleton.Node active={true}>
+          <img src="/imgs/logo-pure.png" alt="最新影院" />
+        </Skeleton.Node>
       </div>
     );
   }, []);
