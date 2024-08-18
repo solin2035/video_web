@@ -1,0 +1,35 @@
+.search {
+  display: flex;
+  padding: 0 16px;
+}
+
+$searchTopHeight: 50px;
+
+.searchTop {
+  width: 100%;
+  height: $searchTopHeight;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.searchInput {
+  border-radius: 20px !important;
+  background-color: #141414 !important;
+  color: #f2f4f5 !important;
+
+  :deep {
+    .ant-input-suffix {
+      background-color: #141414 !important;
+      color: #f2f4f5 !important;
+    }
+  }
+}
+
+.cancel {
+  display: flex;
+  text-align: right;
+  line-height: $searchTopHeight;
+  white-space: nowrap;
+}
