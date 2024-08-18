@@ -4,7 +4,7 @@ import Player, { Events } from "xgplayer";
 import classNames from "classnames";
 interface Props {
   poster: string;
-  src: string;
+  src?: string;
   isMute?: boolean;
   videoId: string | number;
   goLink?: () => void;
