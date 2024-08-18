@@ -20,4 +20,6 @@ $headerHeight: 50px;
 
 .right {
     line-height: $headerHeight;
+    display: flex;
+    gap: 12px;
 }
