@@ -1,7 +1,10 @@
 .search {
   display: flex;
-  padding: 0 16px;
+  padding-left: 16px;
   flex-direction: column;
+  height: 100%;
+  background-color: #000;
+  gap: 12px;
 }
 
 $searchTopHeight: 50px;
@@ -13,15 +16,16 @@ $searchTopHeight: 50px;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  padding-right: 16px;
 
   .searchInput {
     border-radius: 20px;
-    background-color: #242424;
+    background-color: #141414;
     color: #f2f4f5;
     border: none;
 
     &:focus-within, &:hover {
-      background-color: #242424;
+      background-color: #141414;
       box-shadow: none;
       border: none;
     }
@@ -39,4 +43,42 @@ $searchTopHeight: 50px;
   text-align: right;
   line-height: $searchTopHeight;
   white-space: nowrap;
+}
+
+.topContent {
+  width: 100%;
+  overflow: hidden;
+
+  .content {
+    display: flex;
+    gap: 12px;
+    overflow: scroll;
+  }
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.historyListTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 16px;
+}
+
+.historyListUl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.historyListLi {
+  padding: 4px 12px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #141414;
+  color: #fff;
 }
