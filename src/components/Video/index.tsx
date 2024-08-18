@@ -2,6 +2,7 @@ import style from "@/assets/styles/h5/video.module.scss";
 import { useEffect, useMemo, useState, useRef } from "react";
 import Player, { Events } from "xgplayer";
 import classNames from "classnames";
+import { tree } from "../../../node_modules/next/dist/build/templates/app-page";
 interface Props {
   poster: string;
   src?: string;
@@ -21,7 +22,11 @@ const AppVideo = (props: Props) => {
     if (player) {
       player.muted = isMute;
       player.play();
-      setIsPlaying(true);
+    }
+  };
+  const pauseVideo = () => {
+    if (player) {
+      player.pause();
     }
   };
 
@@ -39,7 +44,10 @@ const AppVideo = (props: Props) => {
       });
       p.muted = isMute;
       p.on(Events.PLAY, () => {
-        console.log(`3333`);
+        setIsPlaying(true);
+      });
+      p.on(Events.PAUSE, () => {
+        setIsPlaying(false);
       });
       setPlayer(p);
     }
@@ -58,7 +66,6 @@ const AppVideo = (props: Props) => {
     };
 
     if (player) {
-      console.log(`11111`);
       player.on(Events.PLAY, () => {
         console.log(`22222`);
       });
@@ -71,8 +78,10 @@ const AppVideo = (props: Props) => {
   return (
     <div
       onClick={() => {
-        if (isPlaying) {
+        if (isPlaying && goLink) {
           goLink?.();
+        } else if (isPlaying) {
+          pauseVideo();
         } else {
           playVideo();
         }
