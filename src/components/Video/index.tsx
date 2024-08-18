@@ -1,7 +1,7 @@
 import style from "@/assets/styles/h5/video.module.scss";
 import { useEffect, useMemo, useState, useRef } from "react";
 import Player, { Events } from "xgplayer";
-sinterface Props {
+interface Props {
   poster: string;
   src: string;
   videoId: string | number;
