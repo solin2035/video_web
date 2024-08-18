@@ -1,17 +1,8 @@
-import usePlayer from "../hook/usePlayer"
+import usePlayer from "@/hook/usePlayer";
 
 const Player = () => {
-    const {
-        play,
-        pause,
-        next,
-        prev
-    } = usePlayer()
+  const { play, pause, next, prev } = usePlayer();
 
-    return (
-        <div>
-            player
-        </div>
-    )
-}
-export default Player
+  return <div>player</div>;
+};
+export default Player;

@@ -20,7 +20,6 @@ function redirect(ctx: NextPageContext, location: string) {
 MyApp.getInitialProps = async (context: AppContext) => {
   const { ctx } = context;
   // 是否为移动端（平板电脑不算做移动端）
-
   const isMobileDevice = isMobile({ ua: ctx.req, tablet: false });
   // 是否为平板电脑终端
   const isTabletDevice =

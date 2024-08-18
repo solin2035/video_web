@@ -8,6 +8,7 @@ export function middleware(request: NextRequest) {
     const ua = request.headers.get("user-agent") || "";
     const isMobileDevice = isMobile({ ua, tablet: false });
     const isTabletDevice = !isMobileDevice && isMobile({ ua, tablet: true });
+    console.log(`页面重定向`,123)
     url.pathname = "/pc";
     if (isMobileDevice) {
         url.pathname = "/mobile";
