@@ -7,12 +7,7 @@ import EndLoad from "@/components/h5/EndLoad";
 import AppVideo from "@/components/Video/index";
 import AspectRatioBox from "@/components/AspectRatioBox/index";
 import useGoLink from "@/hook/useGoLink";
-interface VideoData {
-  name: string;
-  intro: string;
-  img: string;
-  id: number;
-}
+
 const Videos = () => {
   const [list, setList] = useState([
     {
