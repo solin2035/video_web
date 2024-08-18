@@ -1,13 +1,16 @@
 import style from "@/assets/styles/h5/video.module.scss";
 import { useEffect, useMemo, useState, useRef } from "react";
 import Player, { Events } from "xgplayer";
-interface Props {
+sinterface Props {
   poster: string;
   src: string;
+  videoId: string | number;
+  goLink: () => void;
 }
 const AppVideo = (props: Props) => {
-  const { poster } = props;
+  const { poster, goLink } = props;
   const [player, setPlayer] = useState<any>();
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const elementRef = useRef(null);
 
@@ -15,6 +18,7 @@ const AppVideo = (props: Props) => {
     if (player) {
       player.muted = true;
       player.play();
+      setIsPlaying(true);
     }
   };
 
@@ -56,7 +60,11 @@ const AppVideo = (props: Props) => {
   return (
     <div
       onClick={() => {
-        playVideo();
+        if (isPlaying) {
+          goLink();
+        } else {
+          playVideo();
+        }
       }}
       className={style.video}
     >
