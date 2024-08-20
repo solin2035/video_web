@@ -1,0 +1,135 @@
+.movieInfo {
+    display: flex;
+    margin-bottom: 16px;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    > img {
+        width: 60px;
+        height: 85px;
+        object-fit:cover;
+        border-radius: 8px;
+        margin-right: 12px;
+    }
+    
+}
+.intro {
+    h4 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 28px;
+        margin-bottom: 2px;
+        margin-top: -5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 2px;
+    }
+
+    > p {
+        color: hsla(0, 0%, 7%, .7);
+        display: flex;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 4px;
+        &:active {
+            text-decoration: underline;
+        }
+        > p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.5em;
+            /* 行高，根据需要调整 */
+            max-height: 3em;
+            /* 3 行 * 行高 */
+            -webkit-line-clamp: 2;
+            /* 限制显示的行数 */
+        }
+        
+    }
+}
+.slVideo {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+        /* 防止子元素换行 */
+    gap: 8px;   
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    &::-webkit-scrollbar {
+        display: none;
+        /* 隐藏滚动条（Webkit 浏览器） */
+    }
+
+    > span {
+        flex: 0 0 auto;
+            /* 子元素不缩放，保持原有宽度 */
+        width: 51px;
+        height: 51px;
+        background-color: hsla(0, 0%, 7%, .04);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        color: #000;
+
+
+    }
+
+}
+.activeItem {
+    background-color: rgba(102, 20, 20, .1) !important;
+    font-weight: 600;
+}
+.detailTitle {
+    color: #111;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 12px;
+    padding-left: 16px;
+
+}
+
+.moments {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    height: 135px;
+    > div {
+        width: 146px;
+        height: 84px;
+        > div {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        >p {
+            color: #111;
+            display: -webkit-box;
+            font-size: 14px;
+            line-height: 20px;
+            margin-top: 8px;
+            white-space: normal;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            font-family: PingFangSC-Regular;
+            overflow: hidden;
+        }
+    }
+    
+}
+.videos {
+    padding-bottom: 16px;
+}

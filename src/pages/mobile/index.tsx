@@ -2,6 +2,7 @@ import Banner from "@/components/h5/Banner";
 import VideoList from "@/components/h5/VideoList/index";
 import Layout from "@/components/h5/Layout";
 import Head from "next/head";
+import style from "@/assets/styles/h5/videos.module.scss";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       </Head>
       <Layout>
         <Banner />
+        <h3 className={style.title}>重磅热播</h3>
         <VideoList></VideoList>
       </Layout>
     </>
