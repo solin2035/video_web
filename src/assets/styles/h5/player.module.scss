@@ -4,7 +4,10 @@
     height: calc((100vw - 32px)* .5625);
     width: calc(100vw - 32px);
     border-radius : 8px;
-    overflow: hidden;
+    background-image: url("/imgs/logo-pure.png");
+    background-size: 80% auto;
+    background-repeat: no-repeat;
+    background-position: center  center;
     
     
 }

@@ -37,13 +37,13 @@ const Index = () => {
         />
         <div className={style.intro}>
           <h4>仙逆</h4>
-          <p>
+          <div>
             · 更新至50集 · 全76集 · 1993
             <p>
               <span>简介</span>
               :改编自耳根同名小说《仙逆》，讲述了乡村平凡少年王林以心中之感动，逆仙而修，求的不仅是长生，更多的是摆脱那背后的蝼蚁之身。他坚信道在人为，以平庸的资质踏入修真仙途，历经坎坷风雨，凭着其聪睿的心智，一步一步走向巅峰，凭一己之力，扬名修真界。
             </p>
-          </p>
+          </div>
         </div>
       </div>
       <div className={style.detailTitle}>选集</div>
@@ -62,7 +62,7 @@ const Index = () => {
       <div className={style.moments}>
         {videoMoments.map((item) => {
           return (
-            <div key={item}>
+            <div className={style.videoWrap} key={item}>
               <AppVideo
                 poster={videoData.img}
                 videoId={videoData.id}
