@@ -18,8 +18,9 @@ const Search = () => {
         };
     }, [])
 
-    const getCurrentList = (id: number) => {
-        return topList.find((s: any) => s.id === id)?.list || []
+    const getCurrentList = (tabId: number) => {
+        console.log(topList)
+        return topList.find((s: any) => s.tabId == tabId)?.hotRankResult?.rankItemList || []
     }
 
     return (
@@ -31,11 +32,11 @@ const Search = () => {
             </div>
             <SearchHistory/>
             <div className={SearchStyle.topContent}>
-                {videoTypeList.map(type => (
+                {videoTypeList.map((item: any) => (
                     <TopList
-                        title={type.title}
-                        key={type.id}
-                        list={getCurrentList(type.id)}
+                        title={item.tabName}
+                        key={item.tabId}
+                        list={getCurrentList(item.tabId)}
                     >
                     </TopList>
                 ))}
