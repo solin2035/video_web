@@ -12,7 +12,7 @@ const TopList = (props: TopTypeProp) => {
         <div className={searchTopListStyle.topListContent}>
             <h2>{title}</h2>
             <ul>
-                {list.map((li: any, i: number) => <li key={i}>{li.name}</li>)}
+                {list.map((li: any, i: number) => <li key={i}><span>{i + 1}</span><span>{li.name}</span></li>)}
             </ul>
         </div>
     )
